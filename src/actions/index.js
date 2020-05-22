@@ -4,6 +4,6 @@ export const fetchPosts=()=>{
   return dispatch=>{
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then(res=>res.json())
-    .then(posts=>console.log(posts))
+    .then(posts=>dispatch({type:'GET_POSTS', payload:posts}))
   }
 }
